@@ -1,0 +1,21 @@
+{
+  "modListVersion": 2,
+  "modList": [{
+    "modid": "AltFurnaces",
+    "name": "Alt Furnaces",
+    "description": "Simply adds some alternate furnace blocks",
+    "version": "1.0",
+    "mcversion": "1.7.10",
+    "url": "https://github.com/tkarnau/AltFurnaces",
+    "updateUrl": "",
+    "authorList": [ "tkarnau" ],
+    "credits": "Authored by tkarnau",
+    "logoFile": "",
+    "screenshots": [ ],
+    "parent": "",
+    "requiredMods": [ ],
+    "dependencies": [ ],
+    "dependants": [ ],
+    "useDependencyInformation": false
+  }]
+}
