@@ -1,6 +1,7 @@
 package com.tkarnau.altfurnaces;
 
 import com.tkarnau.altfurnaces.handler.ConfigurationHandler;
+import com.tkarnau.altfurnaces.init.ModBlocks;
 import com.tkarnau.altfurnaces.init.ModItems;
 import com.tkarnau.altfurnaces.proxy.IProxy;
 import com.tkarnau.altfurnaces.reference.Reference;
@@ -32,6 +33,8 @@ public class AltFurnaces
         LogHelper.info("Pre Initialization Complete!");
 
         ModItems.init();
+
+        ModBlocks.init();
     }
 
     @Mod.EventHandler
