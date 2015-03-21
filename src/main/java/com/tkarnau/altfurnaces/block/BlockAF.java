@@ -1,5 +1,6 @@
 package com.tkarnau.altfurnaces.block;
 
+import com.tkarnau.altfurnaces.creativetab.CreativeTabAF;
 import com.tkarnau.altfurnaces.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -12,6 +13,7 @@ public class BlockAF extends Block
     public BlockAF(Material material)
     {
         super(material);
+        this.setCreativeTab(CreativeTabAF.AF_TAB);
     }
 
     public BlockAF()

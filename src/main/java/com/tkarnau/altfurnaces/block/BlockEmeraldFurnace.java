@@ -1,5 +1,7 @@
 package com.tkarnau.altfurnaces.block;
 
+import com.tkarnau.altfurnaces.creativetab.CreativeTabAF;
+
 public class BlockEmeraldFurnace extends BlockAF
 {
     public BlockEmeraldFurnace()
@@ -7,5 +9,6 @@ public class BlockEmeraldFurnace extends BlockAF
         super();
         this.setBlockName("emeraldfurnace");
         this.setBlockTextureName("emeraldfurnace");
+
     }
 }
