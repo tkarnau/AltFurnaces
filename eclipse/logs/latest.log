@@ -1,11 +1,35 @@
-[13:43:39] [main/INFO]: Setting user: Player250
-[13:43:40] [Client thread/INFO]: LWJGL Version: 2.9.1
-[13:43:44] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Alt Furnaces
-[13:43:45] [Sound Library Loader/INFO]: Sound engine started
-[13:43:51] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[13:43:51] [Client thread/INFO]: Created: 256x256 textures/items-atlas
-[13:43:51] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Alt Furnaces
-[13:43:51] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[13:43:51] [Client thread/INFO]: Created: 256x256 textures/items-atlas
-[13:43:52] [Sound Library Loader/INFO]: Sound engine started
-[13:44:01] [Client thread/INFO]: Stopping!
+[02:03:45] [main/INFO]: Setting user: Player996
+[02:03:48] [Client thread/INFO]: LWJGL Version: 2.9.1
+[02:03:57] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Alt Furnaces
+[02:03:58] [Sound Library Loader/INFO]: Sound engine started
+[02:04:01] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[02:04:02] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[02:04:02] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Alt Furnaces
+[02:04:02] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[02:04:02] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[02:04:03] [Sound Library Loader/INFO]: Sound engine started
+[02:04:10] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[02:04:10] [Server thread/INFO]: Generating keypair
+[02:04:11] [Server thread/INFO]: Preparing start region for level 0
+[02:04:12] [Server thread/INFO]: Preparing spawn area: 76%
+[02:04:13] [Server thread/INFO]: Changing view distance to 12, from 10
+[02:04:14] [Server thread/INFO]: Player996[local:E:44db4fa7] logged in with entity id 214 at (-1063.1922936796134, 4.0, -618.0268026480311)
+[02:04:14] [Server thread/INFO]: Player996 joined the game
+[02:04:19] [Server thread/INFO]: Player996 has just earned the achievement [Taking Inventory]
+[02:04:19] [Client thread/INFO]: [CHAT] Player996 has just earned the achievement [Taking Inventory]
+[02:04:50] [Client thread/INFO]: [CHAT] There is no such item with ID "Bright
+[02:05:06] [Client thread/INFO]: [CHAT] There is no such item with ID Bright
+[02:05:29] [Server thread/INFO]: [Player996: Given [Bright Green Ball] * 1 to Player996]
+[02:05:29] [Client thread/INFO]: [CHAT] Given [Bright Green Ball] * 1 to Player996
+[02:05:56] [Client thread/INFO]: [CHAT] There is no such item with ID [Bright
+[02:06:02] [Server thread/INFO]: Saving and pausing game...
+[02:06:02] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[02:06:02] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[02:06:02] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[02:06:03] [Server thread/INFO]: Stopping server
+[02:06:03] [Server thread/INFO]: Saving players
+[02:06:03] [Server thread/INFO]: Saving worlds
+[02:06:03] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[02:06:03] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[02:06:03] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[02:06:04] [Client thread/INFO]: Stopping!

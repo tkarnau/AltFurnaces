@@ -7,19 +7,9 @@
 ****************************
 :ideaModule
 :ideaProject
-:ideaWorkspace[Fatal Error] :555:2: The content of elements must consist of well-formed character data or markup.
- FAILED
+:ideaWorkspace
+:idea
 
-FAILURE: Build failed with an exception.
+BUILD SUCCESSFUL
 
-* What went wrong:
-Execution failed for task ':ideaWorkspace'.
-> Cannot parse file 'C:\Users\Gabby\Desktop\Tom_Minecraft\TomsMods\1.7.10\AltFurnaces\AltFurnaces.iws'.
-       Perhaps this file was tinkered with? In that case try delete this file and then retry.
-
-* Try:
-Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
-
-BUILD FAILED
-
-Total time: 34.958 secs
+Total time: 22.428 secs

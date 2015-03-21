@@ -1,8 +1,11 @@
 package com.tkarnau.altfurnaces;
 
-import com.tkarnau.altfurnaces.configuration.ConfigurationHandler;
+import com.tkarnau.altfurnaces.handler.ConfigurationHandler;
+import com.tkarnau.altfurnaces.init.ModItems;
 import com.tkarnau.altfurnaces.proxy.IProxy;
 import com.tkarnau.altfurnaces.reference.Reference;
+import com.tkarnau.altfurnaces.utility.LogHelper;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -11,32 +14,36 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 import java.sql.Ref;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 public class AltFurnaces
 {
 
     @Mod.Instance(Reference.MOD_ID)
     public static AltFurnaces instance;
 
-    @SidedProxy(clientSide = "com.tkarnau.altfurnaces.proxy.ClientProxy", serverSide = "com.tkarnau.altfurnaces.proxy.ServerProxy")
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
     public static IProxy proxy;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+        FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
+        LogHelper.info("Pre Initialization Complete!");
+
+        ModItems.init();
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-
+        LogHelper.info("Initialization Complete!");
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
-
+        LogHelper.info("Post Initialization Complete!");
     }
 
 }
