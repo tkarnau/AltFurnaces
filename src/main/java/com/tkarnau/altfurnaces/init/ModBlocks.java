@@ -9,7 +9,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @GameRegistry.ObjectHolder(Reference.MOD_ID)
 public class ModBlocks
 {
-    public static final BlockAF emeraldfurnace = new BlockEmeraldFurnace();
+    public static BlockAF emeraldfurnace = new BlockEmeraldFurnace();
 
     public static void init()
     {

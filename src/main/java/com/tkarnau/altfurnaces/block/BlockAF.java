@@ -8,7 +8,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 
-public class BlockAF extends Block
+public abstract class BlockAF extends Block
 {
     public BlockAF(Material material)
     {

@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 
 public class CreativeTabAF
 {
-    public static final CreativeTabs AF_TAB = new CreativeTabs(Reference.MOD_ID)
+    public static final CreativeTabs AF_TAB = new CreativeTabs(Reference.MOD_ID.toLowerCase())
     {
         @Override
         public Item getTabIconItem()
@@ -15,10 +15,5 @@ public class CreativeTabAF
             return ModItems.ball;
         }
 
-        @Override
-        public String getTranslatedTabLabel()
-        {
-            return "Alt Furnaces";
-        }
     };
 }
