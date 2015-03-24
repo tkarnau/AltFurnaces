@@ -2,23 +2,30 @@ package com.tkarnau.altfurnaces.block;
 
 
 
+import com.tkarnau.altfurnaces.AltFurnaces;
+import com.tkarnau.altfurnaces.reference.GUIs;
+import com.tkarnau.altfurnaces.reference.Reference;
 import com.tkarnau.altfurnaces.tileentity.TileEntityEmeraldFurnace;
 
+import com.tkarnau.altfurnaces.utility.LogHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.client.renderer.texture.IIconRegister;
 
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.IIcon;
 
 import net.minecraft.world.World;
 
 
 
-public class BlockEmeraldFurnace extends BlockMultiTextureAF
+public class BlockEmeraldFurnace extends BlockMultiTextureAF implements ITileEntityProvider
 {
 
     public BlockEmeraldFurnace()
@@ -44,9 +51,9 @@ public class BlockEmeraldFurnace extends BlockMultiTextureAF
 
     }
 
-    public TileEntity createNewTileEntity(World world)
+    public TileEntity createNewTileEntity(World world, int metadata)
     {
-        return new TileEntityEmeraldFurnace();
+        return new TileEntityEmeraldFurnace(0);
     }
 
     @Override
@@ -57,6 +64,35 @@ public class BlockEmeraldFurnace extends BlockMultiTextureAF
         if (itemStack.hasDisplayName())
         {
             ((TileEntityEmeraldFurnace)world.getTileEntity(x, y, z)).setGuiDisplayName(itemStack.getDisplayName());
+        }
+    }
+
+    @Override
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int p_149727_6_, float p_149727_7_, float p_149727_8_, float p_149727_9_)
+    {
+        LogHelper.info("Activating emerald furnace");
+        if (world.isRemote)
+        {
+            return true;
+        }
+        else
+        {
+            TileEntityEmeraldFurnace tileentityfurnace = (TileEntityEmeraldFurnace)world.getTileEntity(x, y, z);
+
+            if (tileentityfurnace != null)
+            {
+                //player.func_146101_a(tileentityfurnace);
+                player.openGui(AltFurnaces.instance, GUIs.EMERALD_FURNACE.ordinal(), world, x, y, z);
+
+
+            }
+
+            /*    public void func_146101_a(TileEntityFurnace p_146101_1_)
+    {
+        this.mc.displayGuiScreen(new GuiFurnace(this.inventory, p_146101_1_));
+    }*/
+
+            return true;
         }
     }
 

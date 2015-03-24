@@ -7,7 +7,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModTileEntities
 {
-    public static final TileEntityEmeraldFurnace teEmeraldFurnace = new TileEntityEmeraldFurnace();
+    //public static final TileEntityEmeraldFurnace teEmeraldFurnace = new TileEntityEmeraldFurnace(0);
 
     public static void init()
     {
