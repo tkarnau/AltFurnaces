@@ -1,4 +1,7 @@
 #gitignore
-/AltFurnaces.iml
-/AltFurnaces.ipr
-/AltFurnaces.iws
+AltFurnaces.iml
+AltFurnaces.ipr
+AltFurnaces.iws
+out/
+eclipse/saves/
+eclipse/logs/

@@ -1,7 +1,10 @@
 package com.tkarnau.altfurnaces;
 
 import com.tkarnau.altfurnaces.handler.ConfigurationHandler;
+import com.tkarnau.altfurnaces.init.ModBlocks;
 import com.tkarnau.altfurnaces.init.ModItems;
+import com.tkarnau.altfurnaces.init.ModTileEntities;
+import com.tkarnau.altfurnaces.init.Recipes;
 import com.tkarnau.altfurnaces.proxy.IProxy;
 import com.tkarnau.altfurnaces.reference.Reference;
 import com.tkarnau.altfurnaces.utility.LogHelper;
@@ -32,11 +35,16 @@ public class AltFurnaces
         LogHelper.info("Pre Initialization Complete!");
 
         ModItems.init();
+
+        ModBlocks.init();
+
+        ModTileEntities.init();
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
+        Recipes.init();
         LogHelper.info("Initialization Complete!");
     }
 

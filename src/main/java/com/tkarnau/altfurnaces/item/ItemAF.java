@@ -1,6 +1,7 @@
 package com.tkarnau.altfurnaces.item;
 
 
+import com.tkarnau.altfurnaces.creativetab.CreativeTabAF;
 import com.tkarnau.altfurnaces.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -13,6 +14,7 @@ public class ItemAF extends Item
     public ItemAF()
     {
         super();
+        this.setCreativeTab(CreativeTabAF.AF_TAB);
     }
 
     @Override
