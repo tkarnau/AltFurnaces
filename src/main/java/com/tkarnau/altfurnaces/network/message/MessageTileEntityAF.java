@@ -95,6 +95,6 @@ public class MessageTileEntityAF implements IMessage, IMessageHandler<MessageTil
     @Override
     public String toString()
     {
-        return String.format("MessageTileEntityEE - x:%s, y:%s, z:%s, orientation:%s, state:%s, customName:%s, ownerUUID:%s", x, y, z, orientation, state, customName, ownerUUID);
+        return String.format("MessageTileEntityAF - x:%s, y:%s, z:%s, orientation:%s, state:%s, customName:%s, ownerUUID:%s", x, y, z, orientation, state, customName, ownerUUID);
     }
 }

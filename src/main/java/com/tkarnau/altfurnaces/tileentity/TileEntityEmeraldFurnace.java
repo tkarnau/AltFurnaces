@@ -2,10 +2,13 @@ package com.tkarnau.altfurnaces.tileentity;
 
 import com.tkarnau.altfurnaces.init.ModBlocks;
 import com.tkarnau.altfurnaces.reference.Names;
+import com.tkarnau.altfurnaces.utility.LogHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 
 
@@ -35,14 +38,16 @@ public class TileEntityEmeraldFurnace extends TileEntityAF implements IInventory
         super();
         this.state = (byte) metaData;
 
-        inventory = new ItemStack[1];
+        inventory = new ItemStack[3];
 
 
     }
 
 
     @Override
-    public int getSizeInventory() {
+    public int getSizeInventory()
+    {
+
         return inventory.length;
     }
 
@@ -122,7 +127,7 @@ public class TileEntityEmeraldFurnace extends TileEntityAF implements IInventory
 
     @Override
     public void openInventory() {
-
+        LogHelper.info("Opening Inventory");
         ++numUsingPlayers;
         worldObj.addBlockEvent(xCoord, yCoord, zCoord, ModBlocks.emeraldfurnace, 1, numUsingPlayers);
     }
@@ -136,5 +141,44 @@ public class TileEntityEmeraldFurnace extends TileEntityAF implements IInventory
     @Override
     public boolean isItemValidForSlot(int p_94041_1_, ItemStack p_94041_2_) {
         return true;
+    }
+
+    @Override
+    public void readFromNBT(NBTTagCompound nbtTagCompound)
+    {
+        super.readFromNBT(nbtTagCompound);
+
+        // Read in the ItemStacks in the inventory from NBT
+        NBTTagList tagList = nbtTagCompound.getTagList(Names.NBT.ITEMS, 10);
+        inventory = new ItemStack[this.getSizeInventory()];
+        for (int i = 0; i < tagList.tagCount(); ++i)
+        {
+            NBTTagCompound tagCompound = tagList.getCompoundTagAt(i);
+            byte slotIndex = tagCompound.getByte("Slot");
+            if (slotIndex >= 0 && slotIndex < inventory.length)
+            {
+                inventory[slotIndex] = ItemStack.loadItemStackFromNBT(tagCompound);
+            }
+        }
+    }
+
+    @Override
+    public void writeToNBT(NBTTagCompound nbtTagCompound)
+    {
+        super.writeToNBT(nbtTagCompound);
+
+        // Write the ItemStacks in the inventory to NBT
+        NBTTagList tagList = new NBTTagList();
+        for (int currentIndex = 0; currentIndex < inventory.length; ++currentIndex)
+        {
+            if (inventory[currentIndex] != null)
+            {
+                NBTTagCompound tagCompound = new NBTTagCompound();
+                tagCompound.setByte("Slot", (byte) currentIndex);
+                inventory[currentIndex].writeToNBT(tagCompound);
+                tagList.appendTag(tagCompound);
+            }
+        }
+        nbtTagCompound.setTag(Names.NBT.ITEMS, tagList);
     }
 }

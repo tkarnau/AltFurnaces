@@ -40,7 +40,7 @@ public class AltFurnaces
 
         ModBlocks.init();
 
-        ModTileEntities.init();
+
     }
 
     @Mod.EventHandler
@@ -48,6 +48,8 @@ public class AltFurnaces
     {
         // Register the GUI Handler
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
+
+        ModTileEntities.init();
 
         Recipes.init();
 

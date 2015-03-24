@@ -59,12 +59,14 @@ public class BlockEmeraldFurnace extends BlockMultiTextureAF implements ITileEnt
     @Override
     public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entityLivingBase, ItemStack itemStack)
     {
+        LogHelper.info("Beginning BlockEmeraldFurnace onBlockPlacedBy");
         super.onBlockPlacedBy(world, x, y, z, entityLivingBase, itemStack);
 
         if (itemStack.hasDisplayName())
         {
             ((TileEntityEmeraldFurnace)world.getTileEntity(x, y, z)).setGuiDisplayName(itemStack.getDisplayName());
         }
+        LogHelper.info("End BlockEmeraldFurnace onBlockPlacedBy");
     }
 
     @Override
@@ -82,6 +84,7 @@ public class BlockEmeraldFurnace extends BlockMultiTextureAF implements ITileEnt
             if (tileentityfurnace != null)
             {
                 //player.func_146101_a(tileentityfurnace);
+                LogHelper.info("OpeningGUI");
                 player.openGui(AltFurnaces.instance, GUIs.EMERALD_FURNACE.ordinal(), world, x, y, z);
 
 

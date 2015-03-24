@@ -11,6 +11,8 @@ public class ModTileEntities
 
     public static void init()
     {
-        GameRegistry.registerTileEntity(TileEntityEmeraldFurnace.class, "emeraldfurnace");
+        //GameRegistry.registerTileEntity(TileEntityEmeraldFurnace.class, "emeraldfurnace");
+        GameRegistry.registerTileEntityWithAlternatives(TileEntityEmeraldFurnace.class, "emeraldfurnace", "tile." + "emeraldfurnace");
     }
+
 }
