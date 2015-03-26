@@ -1,6 +1,7 @@
 package com.tkarnau.altfurnaces.handler;
 
 
+import com.tkarnau.altfurnaces.client.gui.inventory.GuiEmeraldFurnace;
 import com.tkarnau.altfurnaces.inventory.ContainerEmeraldFurnace;
 import com.tkarnau.altfurnaces.reference.GUIs;
 import com.tkarnau.altfurnaces.tileentity.TileEntityEmeraldFurnace;
@@ -33,7 +34,7 @@ public class GuiHandler implements IGuiHandler
         if (id == GUIs.EMERALD_FURNACE.ordinal())
         {
             TileEntityEmeraldFurnace tileEntityEmeraldFurnace = (TileEntityEmeraldFurnace)world.getTileEntity(x,y,z);
-            return new ContainerEmeraldFurnace(player.inventory, tileEntityEmeraldFurnace);
+            return new GuiEmeraldFurnace(player.inventory, tileEntityEmeraldFurnace);
         }
 
         return null;

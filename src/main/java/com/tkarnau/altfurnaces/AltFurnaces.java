@@ -6,6 +6,7 @@ import com.tkarnau.altfurnaces.init.ModBlocks;
 import com.tkarnau.altfurnaces.init.ModItems;
 import com.tkarnau.altfurnaces.init.ModTileEntities;
 import com.tkarnau.altfurnaces.init.Recipes;
+import com.tkarnau.altfurnaces.network.PacketHandler;
 import com.tkarnau.altfurnaces.proxy.IProxy;
 import com.tkarnau.altfurnaces.reference.Reference;
 import com.tkarnau.altfurnaces.utility.LogHelper;
@@ -32,8 +33,10 @@ public class AltFurnaces
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
+        PacketHandler.init();
+
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
-        FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
+
         LogHelper.info("Pre Initialization Complete!");
 
         ModItems.init();
@@ -50,6 +53,12 @@ public class AltFurnaces
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 
         ModTileEntities.init();
+
+        // Initialize custom rendering and pre-load textures (Client only)
+        proxy.initRenderingAndTextures();
+
+        // Register the Items Event Handler
+        proxy.registerEventHandlers();
 
         Recipes.init();
 

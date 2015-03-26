@@ -16,11 +16,12 @@ public class GuiEmeraldFurnace extends GuiContainer
     //private TileEntityAlchemicalChest tileEntityAlchemicalChest;
     TileEntityEmeraldFurnace tileEntityEmeraldFurnace;
 
-    public GuiEmeraldFurnace(InventoryPlayer inventoryPlayer, TileEntityEmeraldFurnace tileEntityEmeraldFurnace)
+    public GuiEmeraldFurnace(InventoryPlayer inventoryPlayer, TileEntityEmeraldFurnace emeraldFurnace)
     {
-        super(new ContainerEmeraldFurnace(inventoryPlayer, tileEntityEmeraldFurnace));
 
-        this.tileEntityEmeraldFurnace = tileEntityEmeraldFurnace;
+        super(new ContainerEmeraldFurnace(inventoryPlayer, emeraldFurnace));
+
+        this.tileEntityEmeraldFurnace = emeraldFurnace;
 
 
     }
@@ -42,7 +43,7 @@ public class GuiEmeraldFurnace extends GuiContainer
 
 
         this.mc.getTextureManager().bindTexture(Textures.Gui.EMERALDFURNACE);
-        LogHelper.info("drawing emerald furnace");
+
 
         int xStart = (width - xSize) / 2;
         int yStart = (height - ySize) / 2;

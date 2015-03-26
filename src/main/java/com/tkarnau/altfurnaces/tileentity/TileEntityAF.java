@@ -3,6 +3,7 @@ package com.tkarnau.altfurnaces.tileentity;
 import com.tkarnau.altfurnaces.network.PacketHandler;
 import com.tkarnau.altfurnaces.network.message.MessageTileEntityAF;
 import com.tkarnau.altfurnaces.reference.Names;
+import com.tkarnau.altfurnaces.utility.LogHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.Packet;
@@ -146,6 +147,7 @@ public class TileEntityAF extends TileEntity
     @Override
     public Packet getDescriptionPacket()
     {
+        LogHelper.info("just before return");
         return PacketHandler.INSTANCE.getPacketFrom(new MessageTileEntityAF(this));
     }
 }
