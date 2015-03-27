@@ -25,11 +25,11 @@ public class ContainerEmeraldFurnace extends ContainerAF
         {
             for (int chestColumnIndex = 0; chestColumnIndex < chestInventoryColumns; ++chestColumnIndex)
             {
-                LogHelper.info("Adding Slot To emerald furnace container");
+
                 this.addSlotToContainer(new Slot(tileEntityEmeraldFurnace, chestColumnIndex + chestRowIndex * chestInventoryColumns, 8 + chestColumnIndex * 18, 18 + chestRowIndex * 18));
             }
         }
-        LogHelper.info("Finished ctor for ContainerEmeraldFurnace");
+
     }
 
     @Override

@@ -5,6 +5,11 @@ Borrowed from ee3 pahimar
  */
 public class Names
 {
+    public static final class Blocks
+    {
+        public static final String EMERALD_FURNACE = "emeraldfurnace";
+    }
+
     public static final class NBT
     {
         public static final String ITEMS = "Items";
@@ -19,5 +24,10 @@ public class Names
         public static final String OWNER = "owner";
         public static final String OWNER_UUID_MOST_SIG = "ownerUUIDMostSig";
         public static final String OWNER_UUID_LEAST_SIG = "ownerUUIDLeastSig";
+    }
+
+    public static final class Containers
+    {
+        public static final String EMERALD_FURNACE = "container.altfurnaces:" + Blocks.EMERALD_FURNACE;
     }
 }

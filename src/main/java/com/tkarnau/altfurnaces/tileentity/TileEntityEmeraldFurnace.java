@@ -107,7 +107,7 @@ public class TileEntityEmeraldFurnace extends TileEntityAF implements IInventory
 
     @Override
     public String getInventoryName() {
-        return this.hasCustomName() ? this.getCustomName() : "Emerald Chest";
+        return this.hasCustomName() ? this.getCustomName() : Names.Containers.EMERALD_FURNACE;
     }
 
     @Override
@@ -127,7 +127,7 @@ public class TileEntityEmeraldFurnace extends TileEntityAF implements IInventory
 
     @Override
     public void openInventory() {
-        LogHelper.info("Opening Inventory");
+
         ++numUsingPlayers;
         worldObj.addBlockEvent(xCoord, yCoord, zCoord, ModBlocks.emeraldfurnace, 1, numUsingPlayers);
     }

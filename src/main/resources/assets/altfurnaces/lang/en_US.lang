@@ -1,3 +1,12 @@
+
+###ITEMS
 item.altfurnaces:ball.name=Bright Green Ball
-tile.altfurnaces:emeraldfurnace.name=Emerald Furnace
+
+###CREATIVE TABS
 itemGroup.altfurnaces=Alt Furnaces
+
+###BLOCKS
+tile.altfurnaces:emeraldfurnace.name=Emerald Furnace
+
+###GUIS
+container.altfurnaces:emeraldfurnace=Emerald Furnace

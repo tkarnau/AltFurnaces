@@ -1,6 +1,7 @@
 package com.tkarnau.altfurnaces.client.gui.inventory;
 
 import com.tkarnau.altfurnaces.inventory.ContainerEmeraldFurnace;
+import com.tkarnau.altfurnaces.reference.Names;
 import com.tkarnau.altfurnaces.reference.Textures;
 import com.tkarnau.altfurnaces.tileentity.TileEntityEmeraldFurnace;
 import com.tkarnau.altfurnaces.utility.LogHelper;
@@ -29,9 +30,8 @@ public class GuiEmeraldFurnace extends GuiContainer
     @Override
     protected void drawGuiContainerForegroundLayer(int p_146979_1_, int p_146979_2_)
     {
-        //fontRendererObj.drawString(StatCollector.translateToLocal(Names.Containers.VANILLA_INVENTORY), 35, ySize - 95 + 2, Integer.parseInt(Colors.PURE_WHITE, 16));
 
-        this.fontRendererObj.drawString("TEST", 8, this.ySize - 96 + 2, 4210752);
+        this.fontRendererObj.drawString(StatCollector.translateToLocal(tileEntityEmeraldFurnace.getInventoryName()), 8, this.ySize - 96 + 2, 4210752);
     }
 
 

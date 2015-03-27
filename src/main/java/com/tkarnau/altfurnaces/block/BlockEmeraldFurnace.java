@@ -47,8 +47,42 @@ public class BlockEmeraldFurnace extends BlockMultiTextureAF implements ITileEnt
     @Override
     public IIcon getIcon(int side, int meta)
     {
-        return side == meta ? this.iconFront : ((side == 0 || side == 1) ? this.iconTop : this.iconLeft);
+        //return side == meta ? this.iconFront : ((side == 0 || side == 1) ? this.iconTop : this.iconLeft);
+        if (side == meta && meta != 0)
+            return this.iconFront;
+        else if (meta <= 0 || meta > 5) //e.g. in inventory
+        {
+            return getDefaultIcon(side);
+        }
+        else
+        {
+            if (side == 0 || side == 1)
+            {
+                return this.iconTop;
+            }
+            else
+            {
+                return this.iconLeft; // all sides
+            }
+        }
+    }
 
+    private IIcon getDefaultIcon(int side)
+    {
+        switch (side)
+        {
+            case 0:
+            case 1:
+                return this.iconTop;
+            case 3:
+                return this.iconFront;
+            case 2:
+            case 4:
+            case 5:
+                return this.iconLeft;
+            default:
+                return null;//dunno
+        }
     }
 
     public TileEntity createNewTileEntity(World world, int metadata)
@@ -59,20 +93,20 @@ public class BlockEmeraldFurnace extends BlockMultiTextureAF implements ITileEnt
     @Override
     public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entityLivingBase, ItemStack itemStack)
     {
-        LogHelper.info("Beginning BlockEmeraldFurnace onBlockPlacedBy");
+
         super.onBlockPlacedBy(world, x, y, z, entityLivingBase, itemStack);
 
         if (itemStack.hasDisplayName())
         {
             ((TileEntityEmeraldFurnace)world.getTileEntity(x, y, z)).setGuiDisplayName(itemStack.getDisplayName());
         }
-        LogHelper.info("End BlockEmeraldFurnace onBlockPlacedBy");
+
     }
 
     @Override
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int p_149727_6_, float p_149727_7_, float p_149727_8_, float p_149727_9_)
     {
-        LogHelper.info("Activating emerald furnace");
+
         if (world.isRemote)
         {
             return true;
@@ -83,17 +117,12 @@ public class BlockEmeraldFurnace extends BlockMultiTextureAF implements ITileEnt
 
             if (tileentityfurnace != null)
             {
-                //player.func_146101_a(tileentityfurnace);
-                LogHelper.info("OpeningGUI");
+
+
                 player.openGui(AltFurnaces.instance, GUIs.EMERALD_FURNACE.ordinal(), world, x, y, z);
 
 
             }
-
-            /*    public void func_146101_a(TileEntityFurnace p_146101_1_)
-    {
-        this.mc.displayGuiScreen(new GuiFurnace(this.inventory, p_146101_1_));
-    }*/
 
             return true;
         }
